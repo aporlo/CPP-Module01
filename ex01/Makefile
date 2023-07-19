@@ -1,18 +1,17 @@
-NAME	= zombie
+NAME	= moarbrainz!
 CC		= c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS	= main.cpp \
-			newZombie.cpp \
 			Zombie.cpp \
-			randomChump.cpp \
+			zombieHorde.cpp \
 
 OBJS	= ${SRCS:.cpp=.o}
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 
 clean:
