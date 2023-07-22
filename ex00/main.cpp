@@ -12,5 +12,5 @@ int main()
 
 	randomChump("lsomrat");
 
-	return (0);
+	return 0;
 }
