@@ -4,14 +4,10 @@
 
 int main(int argc, char **argv)
 {
-    ofstream myfile (argv[1]);
-    if (myfile.is_open())
+    if (argc != 4)
     {
-        myfile << "This is a line.\n";
-        myfile << "This is another line.\n";
-        myfile.close();
+        std::cerr << "Must be 3 argument >> filename, s1, s2" << std::endl;
+        return (0);
     }
-    else cout << "Unable to open file";
-    return 0;
     
 }
