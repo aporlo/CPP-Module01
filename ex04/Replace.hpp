@@ -5,12 +5,17 @@
 #include <string>
 #include <fstream>
 
-Class Myfile
+class File
 {
-    public:
+private:
 
-        void    Myfile( void );
-        void    ~Myfile( void );
+	std::string		name;
 
-    private:
-}
+public:
+
+	File( std::string name);
+	~File( void );
+
+};
+
+#endif

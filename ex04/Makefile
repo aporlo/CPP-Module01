@@ -1,4 +1,4 @@
-NAME	= sedisforlosers
+NAME	= sed
 CCXX	= c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
