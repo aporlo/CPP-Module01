@@ -3,6 +3,7 @@ CCXX	= c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS	= main.cpp \
+			Replace.cpp \
 
 OBJS	= ${SRCS:.cpp=.o}
 
