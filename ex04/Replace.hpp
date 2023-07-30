@@ -17,9 +17,9 @@ private:
 	std::string		_fileName;
 	std::string		s1;
 	std::string		s2;
-	std::ifstream	inputFile;
+	std::ifstream	_infile;
 	std::string		_data;
-	std::ofstream	_writeFile;
+	std::ofstream	_outfile;
 
 public:
 
@@ -28,6 +28,7 @@ public:
 	bool	setFile(std::string newFile);
 	bool	replace(std::string s1, std::string s2);
 	void	outputToFile( std::string fileContent );
+	std::string	fileRead(std::ifstream _infile);
 };
 
 #endif
