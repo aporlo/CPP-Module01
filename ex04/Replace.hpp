@@ -28,7 +28,7 @@ public:
 	bool	setFile(std::string newFile);
 	bool	replace(std::string s1, std::string s2);
 	void	outputToFile( std::string fileContent );
-	std::string	fileRead(std::ifstream _infile);
+	std::string	fileRead(std::ifstream &infile);
 };
 
 #endif
