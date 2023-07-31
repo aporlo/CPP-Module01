@@ -4,17 +4,18 @@ File::File( void ) {}
 File::~File( void ) {
 }
 
-bool	File::setFile( std::string newFile)
+bool	File::setFile( std::string filename)
 {
-	if (this->_infile.is_open())
+	this->_infile.open(filename.c_str());
+	if (!this->_infile.is_open())
 		this->_infile.close();
-	if (newFile == "")
+	if (filename.empty())
 	{
 		std::cerr << "Error:The file can't be an empty string" << std::endl;
 		return (false);
 	}
-	this->_infile.open(newFile.c_str());
-	this->_fileName = newFile;
+
+	this->_fileName = filename;
 	return (true);
 }
 
