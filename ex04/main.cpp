@@ -11,13 +11,7 @@ int main(int argc, char **argv)
         return (1);
     }
     if (!myfile.setFile(argv[1]))
-    {
-        std::cerr << RED << "Error" << RESET << std::endl;
         return (1);
-    }
     if (!myfile.replace(argv[2], argv[3]))
-    {
-        std::cerr << RED << "Error" << RESET << std::endl;
         return (1);
-    }
 }

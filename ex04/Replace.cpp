@@ -1,17 +1,21 @@
 #include "Replace.hpp"
 
 File::File( void ) {}
-File::~File( void ) {
-}
+File::~File( void ) {}
 
 bool	File::setFile( std::string filename)
 {
 	this->_infile.open(filename.c_str());
-	if (!this->_infile.is_open())
-		this->_infile.close();
-	if (filename.empty())
+	if (!(this->_infile.is_open()))
 	{
-		std::cerr << "Error:The file can't be an empty string" << std::endl;
+		std::cerr << RED << "Error: Can't open file" << RESET << std::endl;
+		this->_infile.close();
+		return (false);
+	}
+	if (!filename.empty())
+	{
+		std::cerr << RED << "Error:The file can't be an empty string" << RESET << std::endl;
+		this->_infile.close();
 		return (false);
 	}
 
@@ -38,7 +42,7 @@ bool	File::replace(std::string s1, std::string s2)
 	size_t	len = s1.length();
 	if (s1.empty() || s2.empty())
 	{
-		std::cerr << "Error: String can't be empty" << std::endl;
+		std::cerr << RED << "Error: String can't be empty" << RESET << std::endl;
 		return (false);
 	}
 	this->_data = fileRead(this->_infile);
@@ -50,8 +54,6 @@ bool	File::replace(std::string s1, std::string s2)
 			this->_data.insert(pos, s2);
 		}
 	}
-
-	std::cout << "length>>" << this->_data.length() << std::endl;
 	newFileName += ".replace";
 	this->_outfile.open(newFileName.c_str());
 	this->_outfile.write(this->_data.c_str(), this->_data.length());
