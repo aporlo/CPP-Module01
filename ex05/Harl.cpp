@@ -24,7 +24,6 @@ void	Harl::complain( std::string level)
 	std::string	function[4] = {"debug", "info", "warning", "error"};
 	void (Harl::*fnc[4])(void);
 
-
 	fnc[0] = &Harl::degug;
 	fnc[1] = &Harl::info;
 	fnc[2] = &Harl::warning;

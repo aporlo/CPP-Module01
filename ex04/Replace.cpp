@@ -12,7 +12,7 @@ bool	File::setFile( std::string filename)
 		this->_infile.close();
 		return (false);
 	}
-	if (!filename.empty())
+	if (filename.empty())
 	{
 		std::cerr << RED << "Error:The file can't be an empty string" << RESET << std::endl;
 		this->_infile.close();
